@@ -82,7 +82,7 @@ O **GridSearchCV** testa todas as combinações de parâmetros definidas e retor
 | Modelo | Acurácia | Melhores Parâmetros |
 |--------|----------|---------------------|
 | Árvore de Decisão | 98.65% | criterion=gini, splitter=best, min_samples_leaf=1, min_samples_split=5 |
-| Random Forest | 98.90% | criterion=gini, n_estimators=40, min_samples_leaf=1, min_samples_split=2 |
+| Random Forest | 98.90% | criterion=gini, n_estimators=100, min_samples_leaf=1, min_samples_split=5 |
 | KNN | 98.05% | n_neighbors=5, p=2 |
 | Regressão Logística | 94.85% | C=1.5, solver=lbfgs, tol=0.0001 |
 | SVM | 98.45% | C=1.5, kernel=rbf, tol=0.001 |
@@ -100,7 +100,7 @@ O **VotingClassifier** combina todos os 6 modelos com os melhores parâmetros do
 
 | Técnica | Acurácia Média | Desvio Padrão |
 |---------|---------------|---------------|
-| Voting (combinação dos 6 modelos) | **99.11%** | 0.0013 |
+| Voting (combinação dos 6 modelos) | **99.20%** | 0.0010 |
 
 ---
 
@@ -108,8 +108,8 @@ O **VotingClassifier** combina todos os 6 modelos com os melhores parâmetros do
 
 - **Redes Neurais** foi o modelo mais preciso com **99.70%** no GridSearch melhor resultado individual
 - **Random Forest** surpreendeu positivamente atingindo **98.90%**, superando SVM e KNN
-- **Regressão Logística** foi o modelo mais fraco (94.85%) esperado, pois dados de crédito possuem relações não-lineares que modelos simples não capturam bem
-- O **VotingClassifier** atingiu **99.11%** combinando todos os modelos superior à maioria dos modelos individuais, mas não superou a Rede Neural isolada, pois a Regressão Logística mais fraca puxa levemente o resultado para baixo
+- **Regressão Logística** foi o modelo mais fraco (94.84%) esperado, pois dados de crédito possuem relações não-lineares que modelos simples não capturam bem
+- O **VotingClassifier** atingiu **99.20%** combinando todos os modelos superior à maioria dos modelos individuais, mas não superou a Rede Neural isolada, pois a Regressão Logística mais fraca puxa levemente o resultado para baixo
 - Os desvios padrão baixos em todos os modelos indicam resultados **estáveis e confiáveis**, não fruto de sorte em uma divisão específica dos dados
 
 ---
